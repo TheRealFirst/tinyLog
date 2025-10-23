@@ -1,8 +1,8 @@
-#include "Log.h"
+#include "tinyLog/Log.h"
+#include "tinyLog/asserts.h"
 
 #include <stdarg.h>
 #include "ccprintf.h"
-#include "asserts.h"
 
 
 const char* filepath = "Engine.log";
