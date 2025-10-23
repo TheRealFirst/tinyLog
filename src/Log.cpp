@@ -1,6 +1,7 @@
 #include "tinyLog/Log.h"
 #include "tinyLog/asserts.h"
 
+#include <fstream>
 #include <stdarg.h>
 #include "ccprintf.h"
 
@@ -53,32 +54,32 @@ void log_output(log_level level, const char* message, ...) {
     {
     case (LOG_LEVEL_FATAL):
     {
-        std::cout << cc::red << out_message2 << std::endl;
+        std::cout << cc::red << out_message2 << cc::white << "\n";
         break;
     }
     case (LOG_LEVEL_ERROR):
     {
-        std::cout << cc::red << out_message2 << std::endl;
+        std::cout << cc::red << out_message2 << cc::white << "\n";
         break;
     }
     case (LOG_LEVEL_WARN):
     {
-        std::cout << cc::yellow << out_message2 << std::endl;
+        std::cout << cc::yellow << out_message2 << cc::white << "\n";
         break;
     }
     case (LOG_LEVEL_INFO):
     {
-        std::cout << cc::normal << out_message2 << std::endl;
+        std::cout << cc::normal << out_message2 << cc::white << "\n";
         break;
     }
     case (LOG_LEVEL_DEBUG):
     {
-        std::cout << cc::cyan << out_message2 << std::endl;
+        std::cout << cc::cyan << out_message2 << cc::white << "\n";
         break;
     }
     case (LOG_LEVEL_TRACE):
     {
-        std::cout << cc::green << out_message2 << std::endl;
+        std::cout << cc::green << out_message2 << cc::white << "\n";
         break;
     }
     }
@@ -90,6 +91,6 @@ void report_assertion_failure(const char* expression, const char* message, const
 
 void print_to_file(const char* filepath, const char* message) {
     std::ofstream file(filepath, std::ios::app);
-    file << message << std::endl;
+    file << message << "\n";
     file.close();
 }
