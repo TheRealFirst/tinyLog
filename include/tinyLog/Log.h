@@ -1,12 +1,12 @@
 #pragma once
 #include <stdint.h>
 
-#ifdef LOG_DEBUG
+// #ifdef LOG_DEBUG
 #define LOG_WARN_ENABLED 1
 #define LOG_INFO_ENABLED 1
 #define LOG_DEBUG_ENABLED 1
 #define LOG_TRACE_ENABLED 1
-#endif
+// #endif
 
 typedef enum log_level {
     LOG_LEVEL_FATAL = 0,
